@@ -20,7 +20,7 @@ group :assets do
 
   gem 'rspec-rails', '~> 2.13.0'
   gem 'sqlite3'
-  gem 'bootstrap-sass-rails'
+  gem 'bootstrap-sass', '~> 2.3.1.0'
 end
 
 gem 'jquery-rails'
