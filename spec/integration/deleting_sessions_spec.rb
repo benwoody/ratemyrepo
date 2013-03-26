@@ -8,7 +8,7 @@ feature 'Signing out' do
   scenario 'using the Signout link' do
     visit '/'
     click_link 'Sign out'
-    page.should have_content 'You have been signed out!'
+    page.should have_content 'Signed out'
     logged_in?.should == false
   end
 

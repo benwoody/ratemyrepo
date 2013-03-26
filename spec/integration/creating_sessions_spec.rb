@@ -5,7 +5,7 @@ feature 'Signing in/up using Sign in link' do
     OmniAuth.config.mock_auth[:github] = :invalid_credentials
     visit '/'
     click_link 'Sign in'
-    page.should have_content "There was an error at the remote authentication service"
+    page.should have_content "Authentication Failed"
     current_path.should == '/'
     logged_in?.should == false
   end
@@ -29,13 +29,13 @@ feature 'Signing in directly' do
 
   scenario 'using Github' do
     login_with :github, user_info
-    page.should have_content 'Signed in with'
+    page.should have_content 'Signed in'
     logged_in?.should == true
   end
 
   scenario 'with bad Github creds' do
     login_with :github, :invalid_credentials
-    page.should have_content 'error'
+    page.should have_content 'Authentication Failed'
     logged_in?.should == false
   end
 

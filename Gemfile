@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 gem 'jquery-rails'
-gem 'slim-rails', '~> 1.1.0'
 gem 'dynamic_form', '1.1.4'
 
 gem 'omniauth-github'
