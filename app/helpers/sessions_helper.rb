@@ -4,7 +4,7 @@ module SessionsHelper
     begin
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     rescue ActiveRecord::RecordNotFound
-      nil
+      false
     end
   end
 
@@ -21,7 +21,8 @@ module SessionsHelper
 
   def authenticate
     if !current_user
-      redirect_to root_url, alert: 'You need to sign in to access this page'
+      redirect_back_or root_url
+      flash[:alert] = 'You need to sign in to access this page'
     else
       true
     end
