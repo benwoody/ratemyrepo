@@ -1,0 +1,9 @@
+<h2><%= @user.fullname ? @user.fullname : @user.username %></h2>
+<%= image_tag avatar_url(@user) %>
+<% if @repos.any? %>
+  <% @repos.each do |repo| %>
+    <%= repo.name %>
+  <% end %>
+<% else %>
+  "No repos"
+<% end %>

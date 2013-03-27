@@ -1,8 +1,9 @@
-class RepoController < ApplicationController
+class UsersController < ApplicationController
   before_filter :authorize_github
 
-  def index
-
+  def show
+    @user = User.find_by_username(params[:username])
+    @repos = Repo.where(:user_id => @user.id).all
   end
 
   private
@@ -13,4 +14,3 @@ class RepoController < ApplicationController
                          :client_secret => auth['client_secret'])
     end
 end
-
