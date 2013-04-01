@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def to_params
+    username
+  end
+
   def github
     username
   end
