@@ -15,6 +15,11 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+# Global Var for Github Creds
+GITHUB = YAML.load(File.read(File.expand_path('../github.yml', __FILE__)))
+GITHUB.merge! GITHUB.fetch(Rails.env, {})
+GITHUB.symbolize_keys!
+
 module Ratemyrepo
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
