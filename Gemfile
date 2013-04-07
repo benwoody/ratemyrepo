@@ -26,6 +26,7 @@ group :development do
   gem 'pry-rails', '~> 0.2.2'
   gem "better_errors", ">= 0.3.2"
   gem "binding_of_caller"
+  gem 'unicorn-rails'
 end
 
 group :test do

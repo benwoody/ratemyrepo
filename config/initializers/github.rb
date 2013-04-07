@@ -1,5 +1,4 @@
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  github = YAML.load(File.read(Rails.root.join('config', 'github.yml')))[Rails.env]
-  provider :github, github['client_id'], github['client_secret']
+  provider :github, GITHUB[:client_id], GITHUB[:client_secret]
 end
