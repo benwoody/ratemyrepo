@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def github
-    username
+    @github ||= Github.new(client_id: GITHUB[:client_id], client_secret: GITHUB[:client_secret])
   end
 
 end
