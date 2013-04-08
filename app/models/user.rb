@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :bio, :email, :fullname, :username, :github
 
+  has_many :repos
+
   def self.create_with_github_auth(auth)
     create! do |user|
       user.uid = auth['uid']
@@ -17,7 +19,7 @@ class User < ActiveRecord::Base
     username
   end
 
-  def repos
+  def github_repos
     repos = Github::Repos.new
     repos.list(user: self.username)
   end
