@@ -17,6 +17,15 @@ feature 'Signing in/up using Sign in link' do
     logged_in?.should == true
   end
 
+  scenario "Sign up with valid credentials" do
+    OmniAuth.config.add_mock :github, user_info
+    FactoryGirl.create(:user)
+    User.count.should == 1
+    visit '/'
+    click_on 'Sign in'
+    logged_in?.should == true
+  end
+
 end
 
 feature 'Signing in directly' do
