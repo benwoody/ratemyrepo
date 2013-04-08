@@ -1,7 +1,5 @@
 Ratemyrepo::Application.routes.draw do
 
-  get "users/show"
-
   get '/signin' => 'sessions#new', :as => :signin
   match '/signout', :to => 'sessions#destroy', :as => :signout
   match '/auth/:provider/callback', :to => 'sessions#create'
@@ -10,8 +8,8 @@ Ratemyrepo::Application.routes.draw do
   get '/settings' => 'settings#index', :as => :settings
   post '/settings' => 'settings#update'
 
-  get '/:username' => 'users#show', :as => :user
-  get '/:username/:repo' => 'repo#show'
+  get '/:username' => 'users#show'
+  get '/:username/:repo' => 'repos#show', :id => /[A-Za-z0-9\.]+?/
 
   root :to => 'pages#home'
 
