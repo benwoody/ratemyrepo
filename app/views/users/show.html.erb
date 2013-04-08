@@ -2,7 +2,7 @@
 <%= image_tag avatar_url(@user) %>
 <% if @repos.any? %>
   <% @repos.each do |repo| %>
-    <%= repo.name %>
+    <%= link_to repo.name, repo_path(@user,repo) %><br />
   <% end %>
 <% else %>
   "No repos"
