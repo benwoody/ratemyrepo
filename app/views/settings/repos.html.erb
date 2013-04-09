@@ -1,4 +1,3 @@
-<%= @repo_names %>
 <%= simple_form_for [@user,@repo], :html => { :class => 'form-horizontal' }, :url =>{:controller => 'settings', :action => 'add_repo'}, :method => :post do |f| %>
   <%= f.input :name, collection: @repo_names %>
   <div class="form-actions">

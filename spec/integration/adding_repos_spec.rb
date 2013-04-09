@@ -12,7 +12,7 @@ feature "Add Github Repos in settings" do
   end
 
   scenario 'Clicking Repos should show a list of Github Repos' do
-    page.should have_content("[\"ratemyrepo.github.com\", \"brewerydb2\", \"chatr\"]")
+    page.should have_select("Name", :options => ['ratemyrepo.github.com','brewerydb2','chatr'])
   end
 
 end

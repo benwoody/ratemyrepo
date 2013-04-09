@@ -18,9 +18,10 @@ class SettingsController < ApplicationController
 
   def repos
     @repo = @user.repos.build
+    current_repos = @user.repos.map { |r| r['name'] }
     @repo_names ||= []
     current_user.github_repos.each do |repo|
-      @repo_names << repo.name
+      @repo_names << repo.name unless current_repos.include?(repo.name)
     end
   end
 
