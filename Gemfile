@@ -32,6 +32,8 @@ group :test do
   gem 'capybara', '~> 2.0.2'
   gem 'factory_girl_rails', '~> 4.2.1'
 
+  gem 'webmock'
+
   gem 'spork-rails', '~> 3.2.1'
   gem 'guard', '~> 1.6.2'
   gem 'guard-bundler'

@@ -20,8 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def github_repos
-    repos = Github::Repos.new
-    repos.list(user: self.username)
+    Github::Repos.new.list(user: self.username)
   end
 
 end

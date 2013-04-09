@@ -2,6 +2,7 @@ require 'spec_helper'
 feature 'Show a Repo' do
 
   before do
+    FactoryGirl.create(:user)
     FactoryGirl.create(:repo)
   end
 

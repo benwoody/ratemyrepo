@@ -1,4 +1,4 @@
-<%= simple_form_for @edit_user, :html => { :class => 'form-horizontal' }, :url => :settings, :method => :post do |f| %>
+<%= simple_form_for @user, :html => { :class => 'form-horizontal' }, :url => :settings, :method => :post do |f| %>
   <fieldset>
     <%= f.input :fullname, :label => "Name" %>
     <%= f.input :email %>
