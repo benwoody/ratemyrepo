@@ -21,6 +21,7 @@ module AuthenticationHelpers
         'email'    => 'test@example.com',
         'name'     => 'Test McTesterson',
         'urls'     => {'Blog' => 'http://example.com'},
+        'nickname' => "mcawesome"
       },
       'extra'    => {
         'raw_info' => {
@@ -31,6 +32,10 @@ module AuthenticationHelpers
         }
       }
     }
+  end
+
+  def username
+    user_info['info']['nickname']
   end
 
 end
