@@ -3,11 +3,8 @@ feature "Add Github Repos in settings" do
 
   before do
     login_with :github, user_info
-    ret = File.open("#{Rails.root}/spec/support/github_return.json")
-    stub_request(:get, "https://api.github.com/users/mcawesome/repos").
-         with(:headers => {'Content-Type'=>'application/json', 'User-Agent'=>'Github Ruby Gem 0.9.4'}).
-         to_return(:status => 200, :body => ret, :headers => {})
-
+    stub_list_of_repos
+    stub_single_repo
     visit '/settings/repos'
   end
 
@@ -23,3 +20,4 @@ feature "Add Github Repos in settings" do
   end
 
 end
+

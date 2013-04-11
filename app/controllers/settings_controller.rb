@@ -26,8 +26,8 @@ class SettingsController < ApplicationController
   end
 
   def add_repo
-    @repo = @user.repos.build(params[:repo])
-    if @repo.save
+    @repo = Repo.scrape_github(@user, params[:repo][:name])
+    if @repo.exist?
       redirect_to repo_path(@user,@repo), notice: "Repo added"
     else
       render :action => 'repos'

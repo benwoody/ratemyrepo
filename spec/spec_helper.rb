@@ -16,6 +16,7 @@ Spork.prefork do
   require 'rspec/autorun'
 
   OmniAuth.config.test_mode = true
+  OmniAuth.config.logger = Rails.logger
 
 end
 
