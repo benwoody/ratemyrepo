@@ -16,9 +16,9 @@ class Repo < ActiveRecord::Base
     create! do |r|
       r.user_id     = user.id
       r.name        = repo
-      r.description = github.description
-      r.url         = github.url
-      r.fork        = github.fork
+      r.description = github['description']
+      r.url         = github['url']
+      r.fork        = github['fork']
     end
   end
 
