@@ -18,7 +18,7 @@ class Repo < ActiveRecord::Base
       r.name        = repo
       r.description = github['description']
       r.url         = github['url']
-      # r.fork        = github['fork']
+      r.fork        = github.body['fork']
     end
   end
 
