@@ -4,3 +4,11 @@
     <%= f.submit 'Add', :class => 'btn btn-primary' %>
   </div>
 <% end %>
+<!-- FIX ME -->
+<hr>
+
+<% @current_repos.each do |repo| %>
+  <ul>
+    <li><%= repo.name %></li>
+  </ul>
+<% end %>

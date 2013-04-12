@@ -1,3 +1,7 @@
+<ul>
+  <li><%= link_to "Profile", "#" %></li>
+  <li><%= link_to "Repos", repo_settings_path %></li>
+</ul>
 <%= simple_form_for @user, :html => { :class => 'form-horizontal' }, :url => :settings, :method => :post do |f| %>
   <fieldset>
     <%= f.input :fullname, :label => "Name" %>
