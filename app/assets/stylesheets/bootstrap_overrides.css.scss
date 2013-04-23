@@ -2,8 +2,25 @@ body {
   padding-top: 60px;
 }
 
+/* Navigation Bar */
 $navbarBackground: #000;
 $navbarBackgroundHighlight: #888;
 $navbarText: #eee;
 $navbarLinkColor: #eee;
+$navbarLinkColorHover: #eee;
 
+/* Initialize Jumbotron */
+.jumbotron {
+  position: relative;
+  background-color: #0066B3;
+  margin-top: -20px;
+  padding: 40px 0;
+  color: #fff;
+  h1 {
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center; }
+  p {
+    font-size: 24px;
+    line-height: 1; }
+}
