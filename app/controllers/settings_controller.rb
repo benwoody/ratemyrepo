@@ -1,9 +1,11 @@
 class SettingsController < ApplicationController
   helper SessionsHelper
 
-  before_filter :current_user
+  before_filter :current_user, except: [:update_user]
   before_filter :authenticate
-  before_filter :find_user, :except => [:update_user]
+
+  def show
+  end
 
   def user
   end
@@ -17,7 +19,7 @@ class SettingsController < ApplicationController
   end
 
   def repos
-    @repo = @user.repos.build
+    @repo = @current_user.repos.build
     @current_repos = @user.repos
 
     @repo_names ||= []
@@ -27,18 +29,12 @@ class SettingsController < ApplicationController
   end
 
   def add_repo
-    @repo = Repo.scrape_github(@user, params[:repo][:name])
+    @repo = Repo.scrape_github(@current_user, params[:repo][:name])
     # if @repo.exist?
-      redirect_to repo_path(@user,@repo), notice: "Repo added"
+      redirect_to repo_path(@current_user,@repo), notice: "Repo added"
     # else
     #   render :action => 'repos'
     # end
   end
-
-  private
-
-    def find_user
-      @user = current_user
-    end
 
 end
