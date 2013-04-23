@@ -1,3 +1,29 @@
 <% title("#{@user.username}/#{@repo.name}") %>
-<%= @repo.name %><br />
-<%= @repo.description %><br />
+<div class='jumbotron'>
+  <div class='container'>
+    <div class='repoinfo'>
+      <div class='row'>
+        <div class='span3 offset1'>
+          <h2><%= @repo.name %></h2>
+          <h5><%= @repo.description %></h5>
+          Github Link<br />
+
+          Rating<br />
+          Commits<br />
+          First Commit Date<br />
+          Last Commit Date<br />
+          Number of Commits<br />
+          Pull Requests(Open/Closed)<br />
+          Issues(Open/Closed)<br />
+          Stars<br />
+          Forks<br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='container'>
+  <div class='row'>
+    <h3>Comments</h3>
+  </div>
+</div>
