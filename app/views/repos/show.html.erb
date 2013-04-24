@@ -6,10 +6,9 @@
         <div class='span3 offset1'>
           <h2><%= @repo.name %></h2>
           <h5><%= @repo.description %></h5>
-          Github Link<br />
-
+          <%= @repo.user.username %><br />
+          <%= @repo.url %><br />
           Rating<br />
-          Commits<br />
           First Commit Date<br />
           Last Commit Date<br />
           Number of Commits<br />
@@ -22,6 +21,7 @@
     </div>
   </div>
 </div>
+
 <div class='container'>
   <div class='row'>
     <h3>Comments</h3>
