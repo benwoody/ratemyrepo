@@ -19,8 +19,8 @@ class SettingsController < ApplicationController
   end
 
   def repos
-    @repo = @current_user.repos.build
-    @current_repos = @user.repos
+    @repo = current_user.repos.build
+    @current_repos = current_user.repos
 
     @repo_names ||= []
     current_user.github_repos.each do |repo|
@@ -29,9 +29,9 @@ class SettingsController < ApplicationController
   end
 
   def add_repo
-    @repo = Repo.scrape_github(@current_user, params[:repo][:name])
+    @repo = Repo.scrape_github(current_user, params[:repo][:name])
     # if @repo.exist?
-      redirect_to repo_path(@current_user,@repo), notice: "Repo added"
+      redirect_to repo_path(current_user,@repo), notice: "Repo added"
     # else
     #   render :action => 'repos'
     # end

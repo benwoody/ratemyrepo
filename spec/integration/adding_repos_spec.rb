@@ -5,9 +5,9 @@ feature "Add Github Repos in settings" do
     login_with :github, user_info
     stub_list_of_repos
     stub_single_repo
-    visit '/'
-    click_link "Settings"
-    click_link "Repos"
+    visit '/settings/repos'
+    # click_link "Settings"
+    # click_link "Repos"
   end
 
   scenario 'Clicking Repos should show a dropdown of Github Repos' do
