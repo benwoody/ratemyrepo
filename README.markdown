@@ -1,7 +1,20 @@
-Routes
+Rate My Repo
+------------
 
-/:username [get,delete]
-/:username/:repo [get,post,delete]
-/:username/:repo/edit [put]
+This is a Rails app to add voting and comments to a users Github repository.
 
-/settings [get,post]
+Testing
+=======
+I prefer to use guard to keep my tests running.
+
+    $ guard
+
+or just
+
+    $ rspec
+
+To Do
+=====
+
+* A signed in User should be able to leave a comment on a Repo
+* A signed in User should be able to rate a Repo 1 time
