@@ -16,7 +16,8 @@ if defined?(Bundler)
 end
 
 # Global Var for Github Creds
-GITHUB = YAML.load(File.read(File.expand_path('../github.yml', __FILE__)))
+# PATH SHOULD BE FIXED FOR RUNNING AND TESTING
+GITHUB = YAML.load(File.read(File.expand_path('../github.yml.example', __FILE__)))
 GITHUB.merge! GITHUB.fetch(Rails.env, {})
 GITHUB.symbolize_keys!
 
