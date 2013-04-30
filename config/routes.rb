@@ -7,7 +7,7 @@ Ratemyrepo::Application.routes.draw do
 
   get '/about' => 'pages#about'
 
-  get '/settings' => 'settings#user', :as => :user_settings
+  get '/settings' => 'settings#show', :as => :settings
   post '/settings' => 'settings#update_user'
   get '/settings/repos' => 'settings#repos', :as => :repo_settings
   post '/settings/repos' => 'settings#add_repo'

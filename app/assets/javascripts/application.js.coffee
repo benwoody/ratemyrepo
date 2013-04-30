@@ -1,0 +1,3 @@
+$ ->
+  $('a').tooltip(placement: 'bottom')
+

@@ -1,9 +1,39 @@
-<h2><%= @user.fullname ? @user.fullname : @user.username %></h2>
-<%= image_tag avatar_url(@user) %>
-<% if @repos.any? %>
-  <% @repos.each do |repo| %>
-    <%= link_to repo.name, repo_path(@user,repo) %><br />
-  <% end %>
-<% else %>
-  "No repos"
-<% end %>
+<% title("#{@user.username}'s profile") %>
+<div class='jumbotron'>
+  <div class='container'>
+    <div class='bio'>
+      <div class='row'>
+        <div class='span3 offset1'>
+          <%= image_tag avatar_url(@user) %>
+        </div>
+
+        <div class='span8'>
+          <h2><%= @user.fullname ? @user.fullname : @user.username %></h2>
+          <dl class='dl-horizontal'>
+            <dt>Github:</dt><dd><%= @user.username %></dd>
+            <dt>Bio:</dt><dd><%= @user.bio %></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='span3 offset1'>
+      <h2>Repos</h2>
+      <dl>
+        <% if @repos.any? %>
+          <% @repos.each do |repo| %>
+            <dt><%= link_to repo.name, repo_path(@user,repo) %></dt>
+            <dd><%= repo.description %></dd>
+          <% end %>
+        <% else %>
+          "No repos"
+        <% end %>
+      </dl>
+    </div>
+  </div>
+</div>
+
