@@ -1,0 +1,11 @@
+<%= simple_form_for @current_user, html: { class: 'form-horizontal' }, url: :settings, method: :post do |f| %>
+  <fieldset>
+    <%= f.input :fullname, label: "Name" %>
+    <%= f.input :email %>
+    <%= f.input :bio, input_html: { cols: 50, rows: 5 } %>
+
+    <div class="form-actions">
+      <%= f.submit 'Save', class: 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>

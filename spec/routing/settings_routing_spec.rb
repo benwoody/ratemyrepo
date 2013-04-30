@@ -3,7 +3,7 @@ describe SettingsController do
   it 'should have a #user route' do
     get('/settings').should route_to(
       :controller => 'settings',
-      :action     => 'user')
+      :action     => 'show')
   end
 
   it 'should allow for updates' do
