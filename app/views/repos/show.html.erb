@@ -24,10 +24,12 @@
 
 <div class='container'>
   <div class='row'>
-    <h3>Comments</h3>
-    <% if signed_in? %>
-      <%= render :partial => 'comments/commentbox', :locals => { :comment => @new_comment } %>
-    <% end %>
-    <%= render :partial => 'comments/show', :collection => @comments, :as => :comment %>
+    <div class="span2 offset2">
+      <h3>Comments</h3>
+      <% if signed_in? %>
+        <%= render :partial => 'comments/commentbox', :locals => { :comment => @new_comment } %>
+      <% end %>
+      <%= render :partial => 'comments/show', :collection => @comments, :as => :comment %>
+    </div>
   </div>
 </div>
