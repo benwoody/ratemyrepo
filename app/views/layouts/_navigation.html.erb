@@ -6,18 +6,27 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <%= link_to "RateMyRepo", root_path, :class => "brand" %>
-      <div class="nav-collapse">
-        <ul class="nav pull-right">
-          <% if signed_in? %>
-            <li><%= link_to current_user.username, user_path(@current_user.username), title: "Profile" %></li>
-            <li><%= link_to "Settings", settings_path, title: "View Settings" %></li>
-            <li><%= link_to "Sign out", signout_path, title: "Sign out" %></li>
-          <% else %>
-            <li><%= link_to "Sign in", signin_path, title: "Sign in via Github" %></li>
-          <% end %>
-        </ul>
+
+      <!-- Logo -->
+      <div class="span3 offset2">
+        <%= link_to "RateMyRepo", root_path, :class => "brand" %>
       </div>
+
+      <!-- Right side nave items -->
+      <div class="span4 offset4">
+        <div class="nav-collapse">
+          <ul class="nav pull-right">
+            <% if signed_in? %>
+              <li><%= link_to current_user.username, user_path(@current_user.username), title: "Profile" %></li>
+              <li><%= link_to "Settings", settings_path, title: "View Settings" %></li>
+              <li><%= link_to "Sign out", signout_path, title: "Sign out" %></li>
+            <% else %>
+              <li><%= link_to "Sign in", signin_path, title: "Sign in via Github" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
