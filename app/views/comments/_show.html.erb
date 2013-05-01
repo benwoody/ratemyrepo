@@ -1,6 +1,8 @@
 <div class="comment" id="comment-<%= comment.id %>">
   <hr />
-  <%= link_to "x", comment_path(comment), :method => :delete, :remote => true, :confirm => "Are you sure?", :disable_with => "x", :class => 'close' %>
+  <% if current_user_owns comment %>
+    <%= link_to "x", comment_path(comment), :method => :delete, :remote => true, :confirm => "Are you sure?", :disable_with => "x", :class => 'close' %>
+  <% end %>
   <h4><%= comment.user.username %></h4>
   <small>Posted <%= time_ago_in_words(comment.updated_at) %> ago</small>
   <p><%= comment.body %></p>

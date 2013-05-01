@@ -15,6 +15,7 @@ feature "Repos should have comments" do
     visit '/mctesterson/test_repo'
     fill_in 'comment_body', :with => "Hey this is awesome!"
     click_button "Post comment"
+    page.should have_content "Hey this is awesome"
   end
 
 end
