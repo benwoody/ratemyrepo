@@ -1,4 +1,4 @@
-<div class='comment-form'>
+<div id='comment-form'>
   <%= simple_form_for comment, :remote => true do |f| %>
     <%= f.input :body, :as => :text, :input_html => { :rows => "2" }, :label => false %>
     <%= f.hidden_field :commentable_id, :value => comment.commentable_id %>
