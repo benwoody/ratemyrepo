@@ -2,6 +2,8 @@ class Repo < ActiveRecord::Base
 
   belongs_to :user
 
+  acts_as_commentable
+
   attr_accessible :description, :fork, :name, :url
 
   validates :name, :presence   => true,

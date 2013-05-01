@@ -1,4 +1,4 @@
-<%= simple_form_for [@current_user,@repo], :html => { :class => 'form-horizontal' }, :url =>{:controller => 'settings', :action => 'add_repo'}, :method => :post do |f| %>
+<%= simple_form_for [current_user,@repo], :html => { :class => 'form-horizontal' }, :url =>{:controller => 'settings', :action => 'add_repo'}, :method => :post do |f| %>
   <%= f.input :name, collection: @repo_names %>
   <div class="form-actions">
     <%= f.submit 'Add', :class => 'btn btn-primary' %>

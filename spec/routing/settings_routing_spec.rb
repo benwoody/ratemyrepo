@@ -1,6 +1,7 @@
 require 'spec_helper'
 describe SettingsController do
   it 'should have a #user route' do
+    pending
     get('/settings').should route_to(
       :controller => 'settings',
       :action     => 'show')
