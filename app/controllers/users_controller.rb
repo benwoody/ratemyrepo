@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   private
 
     def authorize_github
-      @github = Github.new(:client_id => GITHUB['client_id'],
-                         :client_secret => GITHUB['client_secret'])
+      @github = Github.new(
+                  :client_id => GITHUB['client_id'],
+                  :client_secret => GITHUB['client_secret'])
     end
 end

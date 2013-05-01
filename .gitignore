@@ -17,3 +17,4 @@
 # Private Data below!
 /config/github.yml
 /config/secret_token
+/config/database.yml
