@@ -8,4 +8,5 @@ before_install:
 before_script:
   - "cp config/database.yml.example config/database.yml"
   - "cp config/github.yml.example config/github.yml"
+  - "cp config/secret_token.example config/secret_token"
   - RAILS_ENV=test bundle exec rake db:create db:migrate

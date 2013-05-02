@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :user do
+    id 1
     uid '12345'
     username 'mctesterson'
     fullname 'Test McTesterson'
