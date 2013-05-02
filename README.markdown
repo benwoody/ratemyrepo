@@ -1,6 +1,9 @@
 Rate My Repo
 ------------
 
+[![Build Status](https://travis-ci.org/benwoody/ratemyrepo.png?branch=master)](https://travis-ci.org/benwoody/ratemyrepo)[![Code Climate](https://codeclimate.com/github/benwoody/ratemyrepo.png)](https://codeclimate.com/github/benwoody/ratemyrepo)
+
+
 This is a Rails app to add voting and comments to a users Github repository.
 
 Running
