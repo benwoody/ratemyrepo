@@ -15,7 +15,7 @@ feature "Users can delete comments" do
     visit '/mctesterson/test_repo'
     fill_in 'comment_body', :with => "Hey this is awesome!"
     click_button "Post comment"
-    page.should have_link("x", :href => "/comments/1")
+    page.should have_link("x")
   end
 
 end

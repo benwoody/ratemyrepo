@@ -16,18 +16,18 @@ module AuthenticationHelpers
   def user_info
     {
       'provider' => 'github',
-      'uid'      => '123456',
+      'uid'      => '12345',
       'info'     => {
         'email'    => 'test@example.com',
         'name'     => 'Test McTesterson',
         'urls'     => {'Blog' => 'http://example.com'},
-        'nickname' => "mcawesome"
+        'nickname' => "mctesterson"
       },
       'extra'    => {
         'raw_info' => {
           'gravatar_id' => 'my_gravatar_thingy',
           'location'    => 'Seattle, Wa',
-          'login'       => 'McAwesome',
+          'login'       => 'mctesterson',
           'bio'         => 'I Rule!'
         }
       }
