@@ -17,9 +17,13 @@ end
 
 # Global Var for Github Creds
 # PATH SHOULD BE FIXED FOR RUNNING AND TESTING
-GITHUB = YAML.load(File.read(File.expand_path('../github.yml', __FILE__)))
-GITHUB.merge! GITHUB.fetch(Rails.env, {})
-GITHUB.symbolize_keys!
+if Rails.env == "production"
+  GITHUB = { :client_id => ENV['client_id'], :client_secret => ENV['client_secret']}
+else
+  GITHUB = YAML.load(File.read(File.expand_path('../github.yml', __FILE__)))
+  GITHUB.merge! GITHUB.fetch(Rails.env, {})
+  GITHUB.symbolize_keys!
+end
 
 module Ratemyrepo
   class Application < Rails::Application

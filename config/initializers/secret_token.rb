@@ -4,4 +4,8 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Ratemyrepo::Application.config.secret_token = File.read(File.expand_path('../../secret_token', __FILE__))
+if Rails.env == 'production'
+  Ratemyrepo::Application.config.secret_token = ENV['secret_token']
+else
+  Ratemyrepo::Application.config.secret_token = File.read(File.expand_path('../../secret_token', __FILE__))
+end
