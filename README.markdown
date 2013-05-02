@@ -1,7 +1,7 @@
 Rate My Repo
 ------------
 
-[![Build Status](https://travis-ci.org/benwoody/ratemyrepo.png?branch=master)](https://travis-ci.org/benwoody/ratemyrepo)[![Code Climate](https://codeclimate.com/github/benwoody/ratemyrepo.png)](https://codeclimate.com/github/benwoody/ratemyrepo)
+[![Build Status](https://travis-ci.org/benwoody/ratemyrepo.png?branch=master)](https://travis-ci.org/benwoody/ratemyrepo) [![Code Climate](https://codeclimate.com/github/benwoody/ratemyrepo.png)](https://codeclimate.com/github/benwoody/ratemyrepo)
 
 
 This is a Rails app to add voting and comments to a users Github repository.
@@ -13,9 +13,9 @@ Install required Gems
 
     $ bundle
 
-Migrate the database
+Create and Migrate the database
 
-    $ rake db:migrate
+    $ rake db:create:all && rake db:migrate
 
 You will need to generate a Github application secret and add it to config/github.yml (in the same fashion I have built into config/github.yml.example).
 
@@ -37,9 +37,3 @@ I prefer to use guard to keep my tests running.
 or just
 
     $ rspec
-
-To Do
-=====
-
-* A signed in User should be able to leave a comment on a Repo
-* A signed in User should be able to rate a Repo 1 time
