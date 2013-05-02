@@ -10,6 +10,6 @@ feature "Added Repos should be shown in Settings" do
   end
 
   scenario 'Page should show added repos' do
-    page.should have_content "test_repo"
+    page.should have_content "chatr"
   end
 end

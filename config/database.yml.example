@@ -11,14 +11,14 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: travis_development
+  database: ratemyrepo_development
   host: localhost
 
 production:
   <<: *defaults
-  database: travis_production
+  database: ratemyrepo_production
 
 test:
   <<: *defaults
-  database: travis_test
+  database: ratemyrepo_test
   host: localhost
