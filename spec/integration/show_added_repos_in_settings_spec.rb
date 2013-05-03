@@ -3,7 +3,6 @@ feature "Added Repos should be shown in Settings" do
 
   before do
     login_with :github, user_info
-    FactoryGirl.create(:user)
     FactoryGirl.create(:repo)
     stub_list_of_repos
     visit '/settings/repos'
