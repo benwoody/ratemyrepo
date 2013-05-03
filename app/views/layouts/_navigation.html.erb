@@ -1,5 +1,14 @@
-<div class="navbar">
-  <div class="navbar-inner" style="-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;">
+<div class="navbar navbar-fixed-top">
+
+  <% flash.each do |name, msg| %>
+    <div class="container">
+      <div class="alert alert-<%= name == :notice ? "success" : "error" %>" data-alert="alert">
+        <h4><%= msg %></h4>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="navbar-inner">
     <div class="container">
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
@@ -8,13 +17,10 @@
       </a>
 
       <!-- Logo -->
-      <div class="span2 offset1">
         <%= link_to "RateMyRepo", root_path, :class => "brand" %>
-      </div>
 
       <!-- Right side nave items -->
-      <div class="span3 offset4">
-        <div class="nav-collapse">
+        <div class="nav-collapse collapse">
           <ul class="nav pull-right">
             <% if signed_in? %>
               <li><%= link_to current_user.username, user_path(@current_user.username), title: "Profile" %></li>
@@ -25,7 +31,6 @@
             <% end %>
           </ul>
         </div>
-      </div>
 
     </div>
   </div>

@@ -4,13 +4,7 @@
     <%= render 'layouts/header' %>
   </head>
   <body>
-    <% flash.each do |name, msg| %>
-      <div class="container">
-        <div class="alert alert-<%= name == :notice ? "success" : "error" %>" data-alert="alert">
-          <%= msg %>
-        </div>
-      </div>
-    <% end %>
+
     <%= render 'layouts/navigation' %>
 
     <%= yield %>
