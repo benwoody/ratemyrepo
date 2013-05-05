@@ -1,9 +1,9 @@
 <div id='review-form'>
   <%= simple_form_for review, :remote => true do |f| %>
     <%= f.input :rating, collection: 1..5 %>
-    <%= f.input :comment, :as => :text, :input_html => { :rows => "2" }, :label => false %>
+    <%= f.input :comment, :as => :text, :input_html => { :rows => "2" } %>
     <div class="form-actions">
-      <%= f.submit 'Post comment', :class => 'btn btn-primary', :disable_with => "Submitting..." %>
+      <%= f.submit 'Rate', :class => 'btn btn-primary', :disable_with => "Submitting..." %>
     </div>
   <% end %>
 </div>
