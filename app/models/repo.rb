@@ -1,7 +1,7 @@
 class Repo < ActiveRecord::Base
 
   belongs_to :user
-  has_many :ratings
+  has_many :reviews
 
   attr_accessible :description, :fork, :name, :url
 

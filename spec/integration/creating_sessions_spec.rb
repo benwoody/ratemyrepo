@@ -1,7 +1,7 @@
 require 'spec_helper'
-feature 'Signing in/up using Sign in link' do
+feature 'Signing in/up using sign in link' do
 
-  scenario "Sign in with invalid credentials" do
+  scenario "with invalid credentials" do
     OmniAuth.config.mock_auth[:github] = :invalid_credentials
     visit '/'
     click_link 'Sign in'
@@ -10,14 +10,14 @@ feature 'Signing in/up using Sign in link' do
     logged_in?.should == false
   end
 
-  scenario "Sign in with valid credentials" do
+  scenario "with valid credentials" do
     OmniAuth.config.add_mock :github, user_info
     visit '/'
     click_on 'Sign in'
     logged_in?.should == true
   end
 
-  scenario "Sign up with valid credentials" do
+  scenario "with valid credentials after creating an account" do
     OmniAuth.config.add_mock :github, user_info
     FactoryGirl.create(:user)
     User.count.should == 1
@@ -30,7 +30,7 @@ end
 
 feature 'Signing in directly' do
 
-  before do
+  background do
     login_with :github, user_info
     visit '/'
     click_link 'Sign out'
@@ -42,7 +42,7 @@ feature 'Signing in directly' do
     logged_in?.should == true
   end
 
-  scenario 'with bad Github creds' do
+  scenario 'with bad Github credentials' do
     login_with :github, :invalid_credentials
     page.should have_content 'Authentication Failed'
     logged_in?.should == false

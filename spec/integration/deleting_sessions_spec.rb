@@ -1,7 +1,7 @@
 require 'spec_helper'
 feature 'Signing out' do
 
-  before do
+  background do
     login_with :github, user_info
   end
 
