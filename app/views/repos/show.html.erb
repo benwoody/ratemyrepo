@@ -25,14 +25,13 @@
 <div class='container'>
   <div class='row'>
     <div class="span8 offset2">
-      <% if current_user %>
-        <h3>Rate this Repo<h3>
+      <% if signed_in? %>
+        <h3>Rate this Repo</h3>
         <%= render :partial => 'reviews/edit', :locals => { :review => @new_review } %>
       <% else %>
-        <h3>Sign in to Rate this Repo!<h3>
+        <h3><%= link_to "Sign in via Github", signin_path %> to Rate this Repo!</h3>
       <% end %>
 
-      <h3>Reviews</h3>
       <%= render :partial => 'reviews/show', :collection => @reviews, :as => :review %>
     </div>
   </div>

@@ -5,5 +5,6 @@
   <% end %>
   <h4><%= review.user.username %></h4>
   <small>Posted <%= time_ago_in_words(review.updated_at) %> ago</small>
+  <p><%= review.rating %></p>
   <p><%= review.comment %></p>
 </div>
