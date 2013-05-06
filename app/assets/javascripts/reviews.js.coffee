@@ -1,5 +1,5 @@
 jQuery ->
-  $("#comment-form")
+  $("#review-form")
     .on "ajax:beforeSend", (evt, xhr, settings) ->
       $(this).find('textarea')
         .addClass('uneditable-input')
@@ -12,9 +12,9 @@ jQuery ->
       $(xhr.responseText).insertAfter(this).show('slow')
 
   $(document)
-    .on "ajax:beforeSend", ".comment", ->
+    .on "ajax:beforeSend", ".review", ->
       $(this).fadeTo('fast', 0.5)
-    .on "ajax:success", ".comment", ->
+    .on "ajax:success", ".review", ->
       $(this).hide('fast')
-    .on "ajax:error", ".comment", ->
+    .on "ajax:error", ".review", ->
       $(this).fadeTo('fast', 1)
