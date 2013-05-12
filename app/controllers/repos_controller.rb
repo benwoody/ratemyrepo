@@ -12,7 +12,6 @@ class ReposController < ApplicationController
     def reviewed
       user = User.find_by_username(params[:username])
       repo = user.repos.find_by_name(params[:repo])
-      puts user.id
       if repo.reviews.where(user_id: current_user).empty?
         @new_review = Review.new
       else
