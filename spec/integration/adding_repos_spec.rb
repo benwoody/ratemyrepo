@@ -17,6 +17,7 @@ feature "Adding a Github repo through #settings" do
     click_button "Add"
     current_path.should == "/#{username}/brewerydb2"
     page.should have_content "Repo added"
+    page.should have_content "https://github.com/benwoody/brewerydb2"
   end
 
 end
