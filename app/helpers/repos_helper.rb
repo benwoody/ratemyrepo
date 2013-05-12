@@ -1,7 +1,7 @@
 module ReposHelper
 
-  def current_user_owns comment
-    if current_user == comment.user
+  def current_user_owns review
+    if current_user == review.user
       true
     else
       false

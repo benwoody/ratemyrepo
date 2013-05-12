@@ -25,11 +25,14 @@
 <div class='container'>
   <div class='row'>
     <div class="span8 offset2">
-      <h3>Comments</h3>
       <% if signed_in? %>
-        <%= render :partial => 'comments/commentbox', :locals => { :comment => @new_comment } %>
+        <h3>Rate this Repo</h3>
+        <%= render :partial => 'reviews/edit', :locals => { :review => @new_review } %>
+      <% else %>
+        <h3><%= link_to "Sign in via Github", signin_path %> to Rate this Repo!</h3>
       <% end %>
-      <%= render :partial => 'comments/show', :collection => @comments, :as => :comment %>
+
+      <%= render :partial => 'reviews/show', :collection => @reviews, :as => :review %>
     </div>
   </div>
 </div>

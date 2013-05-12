@@ -8,8 +8,6 @@ gem 'simple_form', '~> 2.1.0'
 gem 'omniauth-github'
 gem 'github_api', '~> 0.9.4'
 
-gem 'acts_as_commentable_with_threading'
-
 gem 'newrelic_rpm'
 
 # Gems used only for assets and not required

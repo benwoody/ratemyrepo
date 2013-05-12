@@ -1,11 +1,11 @@
 require 'spec_helper'
-feature 'Listing repos' do
+feature 'Visiting a User profile' do
 
-  before do
+  background do
     FactoryGirl.create(:user)
   end
 
-  scenario "Visit a users page with no repos" do
+  scenario "with no repos" do
     visit "/mctesterson"
     page.should have_content 'No repos'
   end
@@ -18,8 +18,9 @@ feature 'Listing repos' do
 
 end
 
-feature 'Clicking repos' do
-  before do
+feature 'and clicking a specific Repo link' do
+
+  background do
     @user = FactoryGirl.create(:user)
     @repo = FactoryGirl.create(:repo)
   end
@@ -29,4 +30,5 @@ feature 'Clicking repos' do
     click_link 'test_repo'
     page.current_path.should == repo_path(@user,@repo)
   end
+
 end
