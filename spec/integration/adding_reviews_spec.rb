@@ -3,7 +3,7 @@ feature "Adding a Review" do
 
   background do
     FactoryGirl.create(:user)
-    @repo = FactoryGirl.create(:repo)
+    FactoryGirl.create(:repo)
   end
 
   # User must sign in/up to review
@@ -43,15 +43,6 @@ feature "Adding a Review" do
     fill_in "Comment", with: "This repo rocks!"
     click_button "Rate"
     page.should have_content "This repo rocks!"
-  end
-
-  # User is allowed only 1 review. Adding after
-  # Reviewing only #updates the Review.
-  scenario "if User has already reviewed" do
-    pending("Move to spec for 'Updating Review")
-    login_with :github, user_info
-    visit '/mctesterson/test_repo'
-    page.should have_content "Update Review"
   end
 
 end
