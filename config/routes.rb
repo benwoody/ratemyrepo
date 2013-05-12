@@ -15,7 +15,7 @@ Ratemyrepo::Application.routes.draw do
   get '/:username' => 'users#show', :as => :user
   get '/:username/:repo' => 'repos#show', :repo => /[A-Za-z0-9\.\_\-]+?/, :as => :repo
 
-  resources :reviews, :only => [:create,:destroy]
+  resources :reviews, :only => [:create,:update_old,:destroy]
 
     # post '/:username/:repo' => 'comments#create', :as => :comment, :only => [:create,:destroy]
     # delete '/:username/:repo' => 'comments#destroy', :as => :comment, :only => [:create,:destroy]
