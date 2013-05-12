@@ -1,8 +1,7 @@
 class Repo < ActiveRecord::Base
 
   belongs_to :user
-
-  acts_as_commentable
+  has_many :reviews
 
   attr_accessible :description, :fork, :name, :url
 

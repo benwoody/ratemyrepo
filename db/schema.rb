@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430184039) do
+ActiveRecord::Schema.define(:version => 20130503220517) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(:version => 20130430184039) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "repo_id"
+    t.integer  "rating"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "reviews", ["repo_id"], :name => "index_reviews_on_repo_id"
+  add_index "reviews", ["user_id"], :name => "index_reviews_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username",   :limit => 16
