@@ -1,9 +1,7 @@
 class ReviewsController < ApplicationController
-  before_filter :find_repo, only: [:update_old,:create]
-  before_filter :update_old, only: :create
 
   def create
-    @review = Review.create(params[:review])
+    @review = Review.update_and_create(params[:review])
     @review.user_id = current_user.id
 
     if @review.save
@@ -25,11 +23,4 @@ class ReviewsController < ApplicationController
       @repo = Repo.find(params[:review][:repo_id])
     end
 
-    def update_old
-      if !@repo.reviews.where(user_id: current_user).empty?
-        old_review = @repo.reviews.where(user_id: current_user.id).last
-        old_review.current = false
-        old_review.save!
-      end
-    end
 end

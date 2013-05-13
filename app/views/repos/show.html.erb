@@ -27,7 +27,10 @@
     <div class="span8 offset2">
       <% if signed_in? %>
         <h3>Rate this Repo</h3>
-        <%= render :partial => 'reviews/edit', :locals => { :review => @new_review } %>
+        <%= render :partial => 'reviews/edit',
+                   :locals => {
+                     :new_review => @new_review,
+                     :old_review => @old_review } %>
       <% else %>
         <h3><%= link_to "Sign in via Github", signin_path %> to Rate this Repo!</h3>
       <% end %>

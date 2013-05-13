@@ -5,4 +5,8 @@ class Review < ActiveRecord::Base
 
   validates_presence_of :rating
   validates :rating, inclusion: 1..5
+
+  def self.update_and_create(review)
+    # puts review
+  end
 end

@@ -15,7 +15,8 @@ class ReposController < ApplicationController
       if repo.reviews.where(user_id: current_user).empty?
         @new_review = Review.new
       else
-        @new_review = repo.reviews.where(user_id: current_user).first
+        @new_review = Review.new
+        @old_review = repo.reviews.where(user_id: current_user).last
       end
     end
 end
