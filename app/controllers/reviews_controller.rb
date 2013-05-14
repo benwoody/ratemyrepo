@@ -1,9 +1,7 @@
 class ReviewsController < ApplicationController
 
   def create
-    @review = Review.update_and_create(params[:review])
-    @review.user_id = current_user.id
-
+    @review = Review.update_and_create(params[:review], current_user)
     if @review.save
       render :partial => 'reviews/show',
              :locals  => { :review => @review },
