@@ -22,7 +22,7 @@ feature "Adding a Review" do
   scenario "with only a rating" do
     login_with :github, user_info
     visit '/mctesterson/test_repo'
-    page.select("4", :from => 'Rating')
+    page.select("4", from: 'Rating')
     click_button "Rate"
     page.should have_content "4"
   end
@@ -31,7 +31,7 @@ feature "Adding a Review" do
   scenario "with a rating and comment" do
     login_with :github, user_info
     visit '/mctesterson/test_repo'
-    page.select("4", :from => 'Rating')
+    page.select("4", from: 'Rating')
     fill_in "Comment", with: "This repo rocks!"
     click_button "Rate"
     page.should have_content "This repo rocks!"

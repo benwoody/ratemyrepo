@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   attr_accessible :bio, :email, :fullname, :username, :github
-
   has_many :repos
   has_many :reviews
 

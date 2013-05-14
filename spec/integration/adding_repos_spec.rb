@@ -13,7 +13,7 @@ feature "Adding a Github repo through #settings" do
   end
 
   scenario 'after selecting a repo' do
-    page.select("brewerydb2", :from => 'Name')
+    page.select("brewerydb2", from: 'Name')
     click_button "Add"
     current_path.should == "/#{username}/brewerydb2"
     page.should have_content "Repo added"
