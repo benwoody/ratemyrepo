@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
              :layout  => false,
              :status  => :created
     else
-      render :js => "alert('Review not added')"
+      # render :js => "alert('Review not added')"
     end
   end
 

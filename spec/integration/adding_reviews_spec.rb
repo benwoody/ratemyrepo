@@ -18,14 +18,6 @@ feature "Adding a Review" do
     page.should have_content('Rate this Repo')
   end
 
-  # Review needs at least a Star Rating
-  scenario "with no rating or comment" do
-    login_with :github, user_info
-    visit '/mctesterson/test_repo'
-    click_button "Rate"
-    page.should have_content "Review not added"
-  end
-
   # User can add a Star Rating only
   scenario "with only a rating" do
     login_with :github, user_info
