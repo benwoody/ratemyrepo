@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(:version => 20130512213139) do
     t.integer  "repo_id"
     t.integer  "rating"
     t.text     "comment"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.boolean  "current"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.boolean  "current",    :default => true
   end
 
   add_index "reviews", ["repo_id"], :name => "index_reviews_on_repo_id"
