@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-   def title(*parts)
+   def title *parts
     unless parts.empty?
       content_for :title do
         (parts << "RateMyRepo").join(" on ")
@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   #clean this up. should be a stored URL
-  def avatar_url(user)
+  def avatar_url user
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=128"
   end

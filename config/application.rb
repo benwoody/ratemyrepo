@@ -10,7 +10,7 @@ require "sprockets/railtie"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  Bundler.require(*Rails.groups(assets: %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
@@ -18,7 +18,7 @@ end
 # Global Var for Github Creds
 # PATH SHOULD BE FIXED FOR RUNNING AND TESTING
 if Rails.env == "production"
-  GITHUB = { :client_id => ENV['client_id'], :client_secret => ENV['client_secret']}
+  GITHUB = { client_id: ENV['client_id'], client_secret: ENV['client_secret']}
 else
   GITHUB = YAML.load(File.read(File.expand_path('../github.yml', __FILE__)))
   GITHUB.merge! GITHUB.fetch(Rails.env, {})
