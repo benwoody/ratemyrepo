@@ -4,7 +4,7 @@ module AuthenticationHelpers
     page.has_selector? "a", :text => "Sign out"
   end
 
-  def login_with(provider, mock_options = {})
+  def login_with provider, mock_options={}
     if mock_options == :invalid_credentials
       OmniAuth.config.mock_auth[provider] = :invalid_credentials
     else

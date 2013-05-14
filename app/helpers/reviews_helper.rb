@@ -8,4 +8,5 @@ module ReviewsHelper
       {comment: "", rating: ""}
     end
   end
+
 end
