@@ -6,6 +6,8 @@ Rate My Repo
 
 This is a Rails app to add voting and comments to a users Github repository.
 
+A probably-not-very-current demo can be found @ http://ratemyrepo.herokuapp.com
+
 Running
 =======
 
