@@ -1,8 +1,12 @@
 <div id='review-form'>
-  <%= simple_form_for review, :remote => true do |f| %>
+  <%= simple_form_for new_review, :remote => true do |f| %>
     <%= f.hidden_field :repo_id, :value => @repo.id %>
-    <%= f.input :rating, collection: 1..5 %>
-    <%= f.input :comment, :as => :text, :input_html => { :rows => "2" } %>
+    <%= f.input :rating, collection: 1..5,
+                         include_blank: false %>
+    <%= f.input :comment, as: :text,
+                          input_html: {
+                            rows: "2",
+                            value: review_notes[:comment] } %>
     <div class="form-actions">
       <%= f.submit 'Rate', :class => 'btn btn-primary', :disable_with => "Submitting..." %>
     </div>
