@@ -14,7 +14,7 @@ feature 'Show a Repo' do
   scenario "with 10 or more comments" do
     add_reviews 11
     visit '/mctesterson/test_repo'
-    page.should have_content "1 2 Next › Last »"
+    page.should have_content "1 2 Next"
   end
 
   def add_reviews num
