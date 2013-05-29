@@ -4,8 +4,8 @@ class ReposController < ApplicationController
   def show
     @user = User.find_by_username(params[:username])
     @repo = @user.repos.find_by_name(params[:repo])
-    @reviews = @repo.reviews.order('created_at desc').
-                             where(current: true)
+    @reviews = @repo.reviews.page.per(10).order('created_at desc').
+                                          where(current: true)
   end
 
   private
