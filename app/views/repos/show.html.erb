@@ -34,8 +34,11 @@
       <% else %>
         <h3><%= link_to "Sign in via Github", signin_path %> to Rate this Repo!</h3>
       <% end %>
-
+      
+      <%= paginate @reviews %>
       <%= render partial: 'reviews/show', collection: @reviews, as: :review %>
+      <%= paginate @reviews %>
+
     </div>
   </div>
 </div>

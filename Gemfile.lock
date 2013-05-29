@@ -112,6 +112,9 @@ GEM
     json (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.8.0)
     libnotify (0.8.0)
       ffi (>= 1.0.11)
@@ -260,6 +263,7 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   jquery-rails
+  kaminari (~> 0.14.1)
   libnotify
   newrelic_rpm
   omniauth-github
