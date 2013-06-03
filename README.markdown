@@ -39,3 +39,56 @@ I prefer to use guard to keep my tests running.
 or just
 
     $ rspec
+
+To Do For RC1
+=============
+
+### Homepage
+
+* What Items should be visible?
+** Top Repos (based on Language?)
+** Newest Comments
+** Newest Repos
+** Top Rated Developers (based on Language?)
+
+### Repos
+
+* Fetch info for Repo
+** Last Commit Date
+** Number of Commits
+** Number of Open Issues/Pull Requests
+** Stars
+** Forks
+
+* Rating algo
+
+### Settings
+
+Make Repo/User tabs Ajaxy
+
+#### Repo
+
+* Turn Repo visibility on/off with toggle
+
+#### User
+
+* Make email public/private
+
+To Do Sprint 2
+==============
+
+### Email
+
+* Email ammount (Weekly updates, Daily Updates, Every new Rating)
+* User messaging
+ 
+### Search
+
+* by Tag
+* by Language
+* by Owner
+* by Name/Keyword
+
+* sort by Rating
+* sort by Number of Comments
+* sort by Last Updated (Last commit date)
