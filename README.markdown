@@ -60,8 +60,6 @@ To Do For RC1
 ** Stars
 ** Forks
 
-* Rating algo
-
 ### Settings
 
 Make Repo/User tabs Ajaxy

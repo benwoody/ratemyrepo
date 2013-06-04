@@ -23,4 +23,13 @@ class Repo < ActiveRecord::Base
     end
   end
 
+  def avg_rating
+    if self.reviews.empty?
+      "No ratings"
+    else
+      ratings = self.reviews.map { |r| r.rating }
+      ratings.sum / ratings.count
+    end
+  end
+
 end

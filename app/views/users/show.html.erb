@@ -28,15 +28,15 @@
       <h2>Repos</h2>
       <dl>
         <% if @repos.any? %>
-	  <%= paginate @repos %>
+	        <%= paginate @repos %>
           <% @repos.each do |repo| %>
             <dt><%= link_to repo.name, repo_path(@user,repo) %></dt>
             <dd><%= repo.description %></dd>
-	    <ul>
-	      <li><%= repo.avg_rating %></li>
-	    </ul>
+      	    <ul>
+      	      <li><%= repo.avg_rating %></li>
+      	    </ul>
           <% end %>
-	  <%= paginate @repos %>
+	        <%= paginate @repos %>
         <% else %>
           "No repos"
         <% end %>

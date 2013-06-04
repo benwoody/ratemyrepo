@@ -4,11 +4,10 @@
     <div class='repoinfo'>
       <div class='row'>
         <div class='span9 offset1'>
-          <h2><%= @repo.name %></h2>
+          <h2><%= @user.username %>/<%= @repo.name %></h2>
           <h5><%= @repo.description %></h5>
-          <%= @repo.user.username %><br />
           <%= @repo.url %><br />
-          Rating<br />
+          Rating: <%= @repo.avg_rating %><br />
           First Commit Date<br />
           Last Commit Date<br />
           Number of Commits<br />
@@ -34,7 +33,7 @@
       <% else %>
         <h3><%= link_to "Sign in via Github", signin_path %> to Rate this Repo!</h3>
       <% end %>
-      
+
       <%= paginate @reviews %>
       <%= render partial: 'reviews/show', collection: @reviews, as: :review %>
       <%= paginate @reviews %>
