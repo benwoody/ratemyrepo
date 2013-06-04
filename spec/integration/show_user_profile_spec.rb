@@ -16,6 +16,11 @@ feature 'Visiting a User profile' do
     page.should have_content 'test_repo'
   end
 
+  scenario "with 10 or more Repos" do
+    add_repos 11
+    visit "/mctesterson"
+    page.should have_content "1 2 Next"
+  end
 end
 
 feature 'and clicking a specific Repo link' do
@@ -31,4 +36,10 @@ feature 'and clicking a specific Repo link' do
     page.current_path.should == repo_path(@user,@repo)
   end
 
+  def add_repos num
+    num.times do |n|
+      id = n+2
+      FactoryGirl.create(:repo, id: id) 
+    end
+  end
 end

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_username(params[:username])
-    @repos = Repo.where(:user_id => @user.id).all
+    @repos = Repo.where(:user_id => @user.id).all.page.per(10)
   end
 
   private

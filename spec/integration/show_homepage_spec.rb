@@ -9,7 +9,7 @@ feature 'Viewing the rootpage' do
   scenario 'while logged in' do
     login_with :github, user_info
     visit '/'
-    page.should have_content('
+    page.should have_content('')
   end
 end
 
